@@ -2,8 +2,11 @@ package com.example.cm_ejercicio3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -79,6 +82,19 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
                 }
                 ProductAdapter adaptador = new ProductAdapter(products,getApplicationContext());
                 lvItems.setAdapter(adaptador);
+
+                lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        Intent intent = new Intent(MainActivity.this,ProductInfo_Activity.class);
+                        Log.d("SELECTION","product id : "+products.get(position).getId());
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("selected",products.get(position));
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                });
         }catch (JSONException e)
         {
 

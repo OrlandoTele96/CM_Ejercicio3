@@ -1,6 +1,8 @@
 package com.example.cm_ejercicio3.model;
 
-public class Product {//This class is a product
+import java.io.Serializable;
+
+public class Product implements Serializable {//This class is a product
 
     int id;
     String name,thumnail_url,price,provider,delivery;
