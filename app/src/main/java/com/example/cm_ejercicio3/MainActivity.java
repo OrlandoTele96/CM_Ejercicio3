@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                        Intent intent = new Intent(MainActivity.this,ProductInfo_Activity.class);
+                        Intent intent = new Intent(MainActivity.this,Main2Activity.class);
                         Log.d(getResources().getString(R.string.logselect),getResources().getString(R.string.logselect_msj)+products.get(position).getName()+getResources().getString(R.string.logselect_msj_2)+products.get(position).getId());
                         Bundle bundle = new Bundle();
                         bundle.putSerializable(getResources().getString(R.string.bundlelabel),products.get(position));
