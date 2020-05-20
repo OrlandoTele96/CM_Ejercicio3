@@ -68,17 +68,16 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
         try {
                 for(int i=0;i<response.length();i++)
                 {
-
                     jsonObject = response.getJSONObject(i);
-                    int id = jsonObject.getInt("id");
-                    String name = jsonObject.getString("name");
-                    String thumnail =jsonObject.getString("thumbnail_url");
-                    String price = jsonObject.getString("price");
-                    String provider = jsonObject.getString("provider");
-                    String delivery = jsonObject.getString("delivery");
+                    int id = jsonObject.getInt(getResources().getString(R.string.itemid));
+                    String name = jsonObject.getString(getResources().getString(R.string.itemname));
+                    String thumnail =jsonObject.getString(getResources().getString(R.string.itemthum));
+                    String price = jsonObject.getString(getResources().getString(R.string.itemprice));
+                    String provider = jsonObject.getString(getResources().getString(R.string.itemprovider));
+                    String delivery = jsonObject.getString(getResources().getString(R.string.itemdelivery));
                     Product product = new Product(id,name,thumnail,price,provider,delivery);
                     products.add(product);
-                    Log.d(getResources().getString(R.string.logproduct),name+id);
+                    Log.d(getResources().getString(R.string.logproduct),getResources().getString(R.string.logproduct_msj)+id);
                 }
                 ProductAdapter adaptador = new ProductAdapter(products,getApplicationContext());
                 lvItems.setAdapter(adaptador);
@@ -88,9 +87,9 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                         Intent intent = new Intent(MainActivity.this,ProductInfo_Activity.class);
-                        Log.d("SELECTION","product id : "+products.get(position).getId());
+                        Log.d(getResources().getString(R.string.logselect),getResources().getString(R.string.logselect_msj)+products.get(position).getName()+getResources().getString(R.string.logselect_msj_2)+products.get(position).getId());
                         Bundle bundle = new Bundle();
-                        bundle.putSerializable("selected",products.get(position));
+                        bundle.putSerializable(getResources().getString(R.string.bundlelabel),products.get(position));
                         intent.putExtras(bundle);
                         startActivity(intent);
                     }

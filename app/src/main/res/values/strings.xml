@@ -3,7 +3,22 @@
     <string name="itemslist">Wish list </string>
     <string name="url">https://www.serverbpw.com</string>
     <string name="items">/cm/2020-2/products.php</string>
+    <string name="iteminfo_url">/cm/2020-2/product_detail.php?id=</string>
+
+    <string name="itemid">id</string>
+    <string name="itemname">name</string>
+    <string name="itemthum">thumbnail_url</string>
+    <string name="itemprice">price</string>
+    <string name="itemprovider">provider</string>
+    <string name="itemdelivery">delivery</string>
 
     <string name="logresponse">RESPONSE</string>
     <string name="logproduct">PRODUCTS</string>
+    <string name="logproduct_msj">ID : </string>
+    <string name="logselect">SELECTION</string>
+    <string name="logselect_msj">product is : </string>
+    <string name="logselect_msj_2">with ID : </string>
+    <string name="logimagen">IMAGE</string>
+
+    <string name="bundlelabel">select</string>
 </resources>

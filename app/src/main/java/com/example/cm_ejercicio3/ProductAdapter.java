@@ -53,7 +53,7 @@ public class ProductAdapter extends BaseAdapter {
 
         Picasso.with(context).load(products.get(position).getThumnail_url() ).into(ivProduct);
 
-        Log.d("IMAGEN",  products.get(position).getThumnail_url());
+        Log.d(v.getResources().getString(R.string.logimagen),  products.get(position).getThumnail_url());
 
         return v;
     }
