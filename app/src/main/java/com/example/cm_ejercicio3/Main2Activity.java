@@ -62,14 +62,13 @@ public class Main2Activity extends AppCompatActivity implements Response.ErrorLi
 
     @Override
     public void onResponse(JSONObject response) {
-
-        //Log.d(getResources().getString(R.string.logresponse),response.getString("imag_url"));
+        Log.d(getResources().getString(R.string.logresponse),response.toString());
 
 
         try {
-            tvProductName.setText(response.getString("name"));
-            tvInfo.setText(response.getString("desc"));
-            Picasso.with(Main2Activity.this).load(response.getString("imag_url")).into(imProduct);
+            tvProductName.setText(response.getString(getResources().getString(R.string.itemname)));
+            tvInfo.setText(response.getString(getResources().getString(R.string.desc)));
+            Picasso.with(Main2Activity.this).load(response.getString(getResources().getString(R.string.img_url))).into(imProduct);
         }
         catch (JSONException e)
         {

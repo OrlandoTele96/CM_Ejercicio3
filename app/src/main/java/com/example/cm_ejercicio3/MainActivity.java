@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
 
     TextView tvTitle;
     ListView lvItems;
+    ProgressBar pbConect;
     String url;
 
     RequestQueue queue;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
 
         tvTitle = findViewById(R.id.tvTitle);
         lvItems = findViewById(R.id.lvItems);
+        pbConect = findViewById(R.id.pbConect);
 
         url =getResources().getString(R.string.url)+getResources().getString(R.string.items);
         products = new ArrayList<Product>();
@@ -56,11 +59,13 @@ public class MainActivity extends AppCompatActivity implements Response.ErrorLis
 
     @Override
     public void onErrorResponse(VolleyError error) {
+        pbConect.setVisibility(View.GONE);
         finish();
     }
 
     @Override
     public void onResponse(JSONArray response) {
+        pbConect.setVisibility(View.GONE);
         Log.d(getResources().getString(R.string.logresponse),response.toString());
 
         JSONObject jsonObject;

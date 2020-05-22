@@ -4,6 +4,7 @@
     <string name="url">https://www.serverbpw.com</string>
     <string name="items">/cm/2020-2/products.php</string>
     <string name="iteminfo_url">/cm/2020-2/product_detail.php?id=</string>
+    <string name="Welcome">Welcome!</string>
 
     <string name="itemid">id</string>
     <string name="itemname">name</string>
@@ -11,6 +12,14 @@
     <string name="itemprice">price</string>
     <string name="itemprovider">provider</string>
     <string name="itemdelivery">delivery</string>
+    <string name="img_url">imag_url</string>
+    <string name="desc">desc</string>
+
+    <string name="priceproduct">price :</string>
+    <string name="pricesign">$</string>
+    <string name="from">from : </string>
+    <string name="pricedel">price to delyvery</string>
+    <string name="costship">shipping : </string>
 
     <string name="logresponse">RESPONSE</string>
     <string name="logproduct">PRODUCTS</string>
